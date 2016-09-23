@@ -12,6 +12,7 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery": "1.11.1"
+    "jquery": "1.11.1",
+    "vue": "^1.0.27"
   }
 }
