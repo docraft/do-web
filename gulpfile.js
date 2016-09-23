@@ -4,34 +4,24 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var pug = require('gulp-pug');
 var connect = require('gulp-connect');
-var sync = require('browser-sync').create();
 
 
 // sass
 gulp.task('sass', function(){
-    return gulp.src('webroot/src/css/*.scss')
+    return gulp.src('src/css/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest('webroot/dist/css'))
+        .pipe(gulp.dest('dist/css'))
 });
 
 // pug
 gulp.task('pug', function(){
-    return gulp.src('webroot/src/html/*.pug')
+    return gulp.src('src/html/*.pug')
         .pipe(pug())
-        .pipe(gulp.dest('webroot/dist/html'))
-});
-
-// sync
-gulp.task('sync', function(){
-    sync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
+        .pipe(gulp.dest('dist/html'))
 });
 
 // server
-gulp.task('server', function(){
+gulp.task('run', function(){
     connect.server({
         livereload: true
     });
